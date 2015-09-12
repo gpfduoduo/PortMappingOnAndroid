@@ -12,4 +12,4 @@
 
 
 ## 效果图
-[!image](https://github.com/gpfduoduo/GetExternalIpFromRouter/blob/master/portmap.gif)
+![效果图](https://github.com/gpfduoduo/GetExternalIpFromRouter/blob/master/portmap.gif)
