@@ -1,4 +1,11 @@
 <resources>
-    <string name="app_name">GetExternalIpFromRouter</string>
-    <string name="action_settings">Settings</string>
+    <string name="app_name">仿Droid UPnP Port Mapper</string>
+    <string name="upnp_connect_start">启动UPnP连接</string>
+    <string name="start_find_router">开始索搜路由器</string>
+    <string name="start_find_igd_device">寻找发现网络网管设备，请稍等...</string>
+    <string name="find_local_ip">发现网络接口：</string>
+    <string name="find_device">发现设备：</string>
+    <string name="external_ip">外网IP：</string>
+    <string name="port_add">添加端口</string>
+    <string name="port_delete">删除端口</string>
 </resources>

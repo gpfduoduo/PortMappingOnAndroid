@@ -11,6 +11,9 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/cybergarage" />
+            <option value="$PROJECT_DIR$/scrolltextview" />
+            <option value="$PROJECT_DIR$/togicloadingview" />
           </set>
         </option>
       </GradleProjectSettings>

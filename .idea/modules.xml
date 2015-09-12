@@ -4,6 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/GetExternalIpFromRouter.iml" filepath="$PROJECT_DIR$/GetExternalIpFromRouter.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cybergarage/cybergarage.iml" filepath="$PROJECT_DIR$/cybergarage/cybergarage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/scrolltextview/scrolltextview.iml" filepath="$PROJECT_DIR$/scrolltextview/scrolltextview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/togicloadingview/togicloadingview.iml" filepath="$PROJECT_DIR$/togicloadingview/togicloadingview.iml" />
     </modules>
   </component>
 </project>

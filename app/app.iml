@@ -95,5 +95,8 @@
     <orderEntry type="library" exported="" name="appcompat-v7-23.0.1" level="project" />
     <orderEntry type="library" exported="" name="support-v4-23.0.1" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-23.0.1" level="project" />
+    <orderEntry type="module" module-name="scrolltextview" exported="" />
+    <orderEntry type="module" module-name="cybergarage" exported="" />
+    <orderEntry type="module" module-name="togicloadingview" exported="" />
   </component>
 </module>
