@@ -1,11 +1,20 @@
 <resources>
-    <string name="app_name">仿Droid UPnP Port Mapper</string>
+    <string name="app_name">UPnP端口映射</string>
     <string name="upnp_connect_start">启动UPnP连接</string>
     <string name="start_find_router">开始索搜路由器</string>
     <string name="start_find_igd_device">寻找发现网络网管设备，请稍等...</string>
     <string name="find_local_ip">发现网络接口：</string>
     <string name="find_device">发现设备：</string>
     <string name="external_ip">外网IP：</string>
-    <string name="port_add">添加端口</string>
-    <string name="port_delete">删除端口</string>
+    <string name="port_add">添加端口映射</string>
+    <string name="port_delete">删除端口映射</string>
+
+    <string name="protocol">输入TCP或者UDP协议</string>
+    <string name="internal_ip">输入内网ip地址</string>
+    <string name="internal_port">输入内容端口</string>
+    <string name="external_port">输入外部端口</string>
+    <string name="description">输入描述</string>
+
+    <string name="clear">取消</string>
+    <string name="add">添加</string>
 </resources>

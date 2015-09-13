@@ -28,6 +28,10 @@ import com.guo.duoduo.togicloadingview.TogicLoadingView;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener
 {
 
+    private static final String tag = MainActivity.class.getSimpleName();
+    private static final int ADD_PORT = 0;
+    private static final int DELETE_PORT = 1;
+
     private ScrollTextView content;
     private TogicLoadingView loadingView;
     private MyController myController;
@@ -59,6 +63,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         port_layout = (LinearLayout) findViewById(R.id.port_layout);
         port_layout.setVisibility(View.GONE);
 
+        Button port_add = (Button) findViewById(R.id.port_add);
+        port_add.setOnClickListener(this);
+        Button port_delete = (Button) findViewById(R.id.port_delete);
+        port_delete.setOnClickListener(this);
+
         View rootView = findViewById(R.id.include_content);
         content = (ScrollTextView) rootView.findViewById(R.id.content);
         loadingView = (TogicLoadingView) rootView.findViewById(R.id.loading_view);
@@ -71,8 +80,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId())
         {
             case R.id.port_add :
+                startActivityForResult(new Intent(MainActivity.this,
+                    AddPortActivity.class), ADD_PORT);
                 break;
             case R.id.port_delete :
+                startActivityForResult(new Intent(MainActivity.this,
+                    DeletePortActivity.class), DELETE_PORT);
                 break;
             case R.id.start_find_router :
                 content.setText("");
@@ -94,6 +107,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 start_find.setClickable(false);
                 break;
         }
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+
     }
 
     @Override

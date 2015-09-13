@@ -1,7 +1,10 @@
 package com.guo.duoduo.getexternalipfromrouter.ui;
 
 
+import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+
+import com.guo.duoduo.getexternalipfromrouter.R;
 
 
 /**
@@ -9,4 +12,17 @@ import android.support.v7.app.AppCompatActivity;
  */
 public class AddPortActivity extends AppCompatActivity
 {
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.activity_addport);
+    }
+
+    @Override
+    protected void onDestroy()
+    {
+        super.onDestroy();
+    }
 }

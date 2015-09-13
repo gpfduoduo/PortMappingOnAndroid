@@ -61,7 +61,7 @@ public class TogicLoadingView extends View
 
     @TargetApi(21)
     public TogicLoadingView(Context context, AttributeSet attrs, int defStyleAttr,
-                            int defStyleRes)
+            int defStyleRes)
     {
         super(context, attrs, defStyleAttr, defStyleRes);
         init();
@@ -118,7 +118,8 @@ public class TogicLoadingView extends View
     protected void onAttachedToWindow()
     {
         super.onAttachedToWindow();
-        startAnimation();
+        if (getVisibility() == VISIBLE)
+            startAnimation();
     }
 
     @Override
@@ -132,9 +133,9 @@ public class TogicLoadingView extends View
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
     {
         widthMeasureSpec = MeasureSpec.makeMeasureSpec(CIRCLE_RADIUS * 10,
-                MeasureSpec.EXACTLY);
+            MeasureSpec.EXACTLY);
         heightMeasureSpec = MeasureSpec.makeMeasureSpec(CIRCLE_RADIUS * 6,
-                MeasureSpec.EXACTLY);
+            MeasureSpec.EXACTLY);
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 
