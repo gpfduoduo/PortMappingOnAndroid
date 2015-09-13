@@ -112,11 +112,7 @@ public class UpnpService extends Service
                         }
                         else
                         {
-                            Message mappingMsg = Message.obtain();
-                            mappingMsg.what = UpnpConstant.MSG.find_ok;
-                            ipMsg.obj = MyApplication.getInstance().getResources()
-                                    .getString(R.string.unknown_error);
-                            MyApplication.getInstance().sendMessage(ipMsg);
+                            Log.d(tag, "未知");
                         }
 
                         Message endMsg = Message.obtain();

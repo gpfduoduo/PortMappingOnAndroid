@@ -160,4 +160,43 @@ public class UpnpCommand
         }
         return success;
     }
+
+    /**
+     * 删除端口映射
+     * 
+     * @param dev
+     * @param external_port
+     * @param internal_port
+     * @param protocol
+     * @return
+     */
+    public static boolean DeletePortMapping(Device dev, String external_port,
+            String internal_port, String protocol)
+    {
+        boolean success = false;
+
+        if (dev != null)
+        {
+            org.cybergarage.upnp.Service wanIPConnectionSer = dev
+                    .getService(UpnpConstant.SERVICE_TYPE.WANIPConnection);
+            if (wanIPConnectionSer != null)
+            {
+                Action delPortMappingAction = wanIPConnectionSer
+                        .getAction(UpnpConstant.ACTION.DeletePortMapping);
+                if (delPortMappingAction != null)
+                {
+                    ArgumentList argumentList = delPortMappingAction.getArgumentList();
+                    argumentList.getArgument("NewExternalPort").setValue(external_port);
+                    argumentList.getArgument("NewProtocol").setValue(protocol);
+                    argumentList.getArgument("NewInternalPort").setValue(internal_port);
+                    if (delPortMappingAction.postControlAction())
+                    {
+                        success = true;
+                    }
+                }
+            }
+        }
+
+        return success;
+    }
 }
