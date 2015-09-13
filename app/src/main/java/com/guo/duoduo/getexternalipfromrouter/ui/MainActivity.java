@@ -29,8 +29,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 {
 
     private static final String tag = MainActivity.class.getSimpleName();
-    private static final int ADD_PORT = 0;
-    private static final int DELETE_PORT = 1;
 
     private ScrollTextView content;
     private TogicLoadingView loadingView;
@@ -80,12 +78,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId())
         {
             case R.id.port_add :
-                startActivityForResult(new Intent(MainActivity.this,
-                    AddPortActivity.class), ADD_PORT);
+                startActivity(new Intent(MainActivity.this, AddPortActivity.class));
                 break;
             case R.id.port_delete :
-                startActivityForResult(new Intent(MainActivity.this,
-                    DeletePortActivity.class), DELETE_PORT);
+                startActivity(new Intent(MainActivity.this, DeletePortActivity.class));
                 break;
             case R.id.start_find_router :
                 content.setText("");
@@ -152,6 +148,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 case UpnpConstant.MSG.find_end :
                 {
                     activity.start_find.setClickable(true);
+                    activity.loadingView.stopAnimation();
                     activity.loadingView.setVisibility(View.GONE);
                     activity.stopService(new Intent(activity, UpnpService.class));
 

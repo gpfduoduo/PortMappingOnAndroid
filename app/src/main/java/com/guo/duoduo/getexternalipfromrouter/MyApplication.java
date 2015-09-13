@@ -5,6 +5,8 @@ import android.app.Application;
 import android.os.Handler;
 import android.os.Message;
 
+import org.cybergarage.upnp.Device;
+
 import java.util.concurrent.ConcurrentHashMap;
 
 
@@ -15,6 +17,8 @@ public class MyApplication extends Application
 {
     private static MyApplication instance;
     private ConcurrentHashMap<String, Handler> mHandlerMap = new ConcurrentHashMap<>();
+
+    public static Device curDevice = null;
 
     @Override
     public void onCreate()

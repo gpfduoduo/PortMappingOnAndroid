@@ -119,4 +119,45 @@ public class UpnpCommand
         return entity;
     }
 
+    /**
+     * 添加端口映射
+     * 
+     * @param entity
+     * @return
+     */
+    public static boolean addPortMapping(Device dev, MappingEntity entity)
+    {
+        boolean success = false;
+        if (dev != null && entity != null)
+        {
+            org.cybergarage.upnp.Service wanIPConnectionSer = dev
+                    .getService(UpnpConstant.SERVICE_TYPE.WANIPConnection);
+            if (wanIPConnectionSer != null)
+            {
+                Action addPortMappingAction = wanIPConnectionSer
+                        .getAction(UpnpConstant.ACTION.AddPortMapping);
+                if (addPortMappingAction != null)
+                {
+                    ArgumentList argumentList = addPortMappingAction.getArgumentList();
+                    argumentList.getArgument("NewRemoteHost").setValue("");
+                    argumentList.getArgument("NewExternalPort").setValue(
+                        entity.NewExternalPort);
+                    argumentList.getArgument("NewProtocol").setValue(entity.NewProtocol);
+                    argumentList.getArgument("NewInternalPort").setValue(
+                        entity.NewInternalPort);
+                    argumentList.getArgument("NewInternalClient").setValue(
+                        entity.NewInternalClient);
+                    argumentList.getArgument("NewEnabled").setValue("1");
+                    argumentList.getArgument("NewPortMappingDescription").setValue(
+                        entity.NewPortMappingDescription);
+                    argumentList.getArgument("NewLeaseDuration").setValue("0");
+                    if (addPortMappingAction.postControlAction())
+                    {
+                        success = true;
+                    }
+                }
+            }
+        }
+        return success;
+    }
 }

@@ -48,7 +48,7 @@
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/add_port_external_ip"
+            android:id="@+id/add_port_external_port"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -76,7 +76,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/clear"
+            android:id="@+id/cancel"
             style="@style/btn_green_style"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

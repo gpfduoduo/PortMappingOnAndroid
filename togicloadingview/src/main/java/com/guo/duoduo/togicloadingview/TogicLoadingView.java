@@ -94,6 +94,8 @@ public class TogicLoadingView extends View
     protected void onDraw(Canvas canvas)
     {
         super.onDraw(canvas);
+        if (getVisibility() != View.VISIBLE)
+            return;
         if (sign)
         {
             canvas.save();
@@ -120,6 +122,8 @@ public class TogicLoadingView extends View
         super.onAttachedToWindow();
         if (getVisibility() == VISIBLE)
             startAnimation();
+        else
+            stopAnimation();
     }
 
     @Override
@@ -160,7 +164,7 @@ public class TogicLoadingView extends View
         paint.setStyle(Paint.Style.FILL);
     }
 
-    private void startAnimation()
+    public void startAnimation()
     {
         tlAnimation = new TogicLoadingAnimation();
         tlAnimation.setDuration(500);
@@ -170,7 +174,7 @@ public class TogicLoadingView extends View
         startAnimation(tlAnimation);
     }
 
-    private void stopAnimation()
+    public void stopAnimation()
     {
         this.clearAnimation();
         postInvalidate();

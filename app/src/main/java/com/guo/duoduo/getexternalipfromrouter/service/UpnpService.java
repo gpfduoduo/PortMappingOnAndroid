@@ -84,6 +84,8 @@ public class UpnpService extends Service
                     String deviceType = dev.getDeviceType();
                     if (deviceType.equals(UpnpConstant.IGD))
                     {
+                        MyApplication.curDevice = dev;
+
                         Message msg = Message.obtain();
                         msg.what = UpnpConstant.MSG.find_ok;
                         msg.obj = MyApplication.getInstance().getResources()
@@ -106,6 +108,14 @@ public class UpnpService extends Service
                             Message mappingMsg = Message.obtain();
                             mappingMsg.what = UpnpConstant.MSG.find_ok;
                             ipMsg.obj = entity.toString();
+                            MyApplication.getInstance().sendMessage(ipMsg);
+                        }
+                        else
+                        {
+                            Message mappingMsg = Message.obtain();
+                            mappingMsg.what = UpnpConstant.MSG.find_ok;
+                            ipMsg.obj = MyApplication.getInstance().getResources()
+                                    .getString(R.string.unknown_error);
                             MyApplication.getInstance().sendMessage(ipMsg);
                         }
 

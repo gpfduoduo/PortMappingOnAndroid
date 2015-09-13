@@ -42,5 +42,8 @@ public class UpnpConstant
         public static final int find_ok = 0;
         public static final int find_start = 2;
         public static final int find_end = 1;
+
+        public static final int add_port_ok = 3;
+        public static final int add_port_fail = 4;
     }
 }

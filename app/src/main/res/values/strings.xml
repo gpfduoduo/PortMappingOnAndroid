@@ -11,10 +11,14 @@
 
     <string name="protocol">输入TCP或者UDP协议</string>
     <string name="internal_ip">输入内网ip地址</string>
-    <string name="internal_port">输入内容端口</string>
+    <string name="internal_port">输入内部端口</string>
     <string name="external_port">输入外部端口</string>
     <string name="description">输入描述</string>
 
     <string name="clear">取消</string>
     <string name="add">添加</string>
+    <string name="add_port_fail">添加端口映射失败</string>
+    <string name="add_port_success">添加端口映射成功</string>
+
+    <string name="unknown_error">发生未知错误</string>
 </resources>
