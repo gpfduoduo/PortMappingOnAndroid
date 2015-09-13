@@ -11,7 +11,7 @@
 3、解析服务（urn:schemas-upnp-org:service:WANIPConnection:1）的描述信息（scpdurl地址），获取该服务中的所有接口  
 4、通过saop向接口post消息，参数按照上一步获取的接口信息进行设置，就可以返回相应的信息。  
 
-下面列举几个接口
+下面列举几个接口  
 增加端口映射。   
 ```
 "AddPortMapping"  
