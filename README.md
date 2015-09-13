@@ -12,18 +12,26 @@
 4、通过saop向接口post消息，参数按照上一步获取的接口信息进行设置，就可以返回相应的信息。  
 
 下面列举几个接口
-增加端口映射。 "AddPortMapping"  
+增加端口映射。   
+```
+"AddPortMapping"  
 "<NewRemoteHost></NewRemoteHost>rn"  "<NewExternalPort>ExternalPort</NewExternalPort>rn"                               "<NewProtocol>Protocol</NewProtocol>rn"                                      "<NewInternalPort>InternalPort</NewInternalPort>n"
 "<NewInternalClient>InternalClient</NewInternalClient>rn"                 
 "<NewEnabled>1</NewEnabled>rn"
 "<NewPortMappingDescription>PortMappingDescription"       "</NewPortMappingDescription>rn"       
 "<NewLeaseDuration>LeaseDuration</NewLeaseDuration>rn" 
-删除端口映射　"DeletePortMapping"   
+```
+删除端口映射　  
+```
+"DeletePortMapping"   
 "<NewRemoteHost></NewRemoteHost>rn" "<NewExternalPort>ExternalPort</NewExternalPort>rn"   "<NewProtocol>Protocol</NewProtocol>rn" 
-获得端口映射信息　"GetGenericPortMappingEntry"   
+```
+获得端口映射信息　  
+```
+"GetGenericPortMappingEntry"   
 "<NewPortMappingIndex>PortMappingIndex</NewPortMappingIndex>"  "<NewRemoteHost></NewRemoteHost>rn"   "<NewExternalPort></NewExternalPort>rn" "<NewProtocol></NewProtocol>rn"     "<NewInternalPort></NewInternalPort>rn" "<NewInternalClient></NewInternalClient>rn" "<NewEnabled>1</NewEnabled>rn"  "<NewPortMappingDescription>"                                          "</NewPortMappingDescription>rn"           　"<NewLeaseDuration></NewLeaseDuration>rn"
-
-     其中斜体部分需要在编程是填入的。ExternalPort 外部端口。InternalPort内部端口。这两者一般就填映射的端口。Protocal 填TCP或UDP。InterClient 一般就是本地IP地址。PortMappingDescription 填写端口映射的描述，比如什么程序建立了这个端口。LeaseDuration 是映射的持续时间，用0表示不永久。PortMappingIndex 是端口映射索引，路由上第几个映射。
+```
+其中斜体部分需要在编程是填入的。ExternalPort 外部端口。InternalPort内部端口。这两者一般就填映射的端口。Protocal 填TCP或UDP。InterClient 一般就是本地IP地址。PortMappingDescription 填写端口映射的描述，比如什么程序建立了这个端口。LeaseDuration 是映射的持续时间，用0表示不永久。PortMappingIndex 是端口映射索引，路由上第几个映射。
 
 
 ## 效果图
