@@ -53,11 +53,13 @@ public class UpnpService extends Service
     private static class UpnpThread extends Thread
     {
         private ControlPoint controlPoint;
+        private boolean isDestroyed = false;
 
         @Override
         public void destroy()
         {
             controlPoint.stop();
+            isDestroyed = true;
         }
 
         @Override
@@ -101,18 +103,27 @@ public class UpnpService extends Service
                             + externalIp;
                         MyApplication.getInstance().sendMessage(ipMsg);
 
-                        MappingEntity entity = UpnpCommand.GetGenericPortMappingEntry(
-                            dev, 0);
-                        if (entity != null)
+                        for (int i = 0; i < 10000; i++)
                         {
-                            Message mappingMsg = Message.obtain();
-                            mappingMsg.what = UpnpConstant.MSG.find_ok;
-                            ipMsg.obj = entity.toString();
-                            MyApplication.getInstance().sendMessage(ipMsg);
-                        }
-                        else
-                        {
-                            Log.d(tag, "未知");
+                            MappingEntity entity = UpnpCommand
+                                    .GetGenericPortMappingEntry(dev, i);
+                            if (entity != null)
+                            {
+                                if (!MyApplication.itemList.contains(entity))
+                                    MyApplication.itemList.add(entity);
+                                Message mappingMsg = Message.obtain();
+                                mappingMsg.what = UpnpConstant.MSG.find_ok;
+                                ipMsg.obj = entity.toString();
+                                MyApplication.getInstance().sendMessage(ipMsg);
+                            }
+                            else
+                            {
+                                Log.d(tag, "未知");
+                                break;
+                            }
+
+                            if (isDestroyed)
+                                break;
                         }
 
                         Message endMsg = Message.obtain();

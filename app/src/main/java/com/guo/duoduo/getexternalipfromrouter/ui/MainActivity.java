@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.guo.duoduo.getexternalipfromrouter.MyApplication;
 import com.guo.duoduo.getexternalipfromrouter.MyController;
@@ -21,7 +22,6 @@ import com.guo.duoduo.getexternalipfromrouter.R;
 import com.guo.duoduo.getexternalipfromrouter.constant.UpnpConstant;
 import com.guo.duoduo.getexternalipfromrouter.service.UpnpService;
 import com.guo.duoduo.getexternalipfromrouter.utils.NetworkUtils;
-import com.guo.duoduo.scrolltextview.ScrollTextView;
 import com.guo.duoduo.togicloadingview.TogicLoadingView;
 
 
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private static final String tag = MainActivity.class.getSimpleName();
 
-    private ScrollTextView content;
+    private TextView content;
     private TogicLoadingView loadingView;
     private MyController myController;
     private Button start_find;
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         start_find.setOnClickListener(this);
 
         port_layout = (LinearLayout) findViewById(R.id.port_layout);
-        port_layout.setVisibility(View.GONE);
+        port_layout.setVisibility(View.INVISIBLE);
 
         Button port_add = (Button) findViewById(R.id.port_add);
         port_add.setOnClickListener(this);
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         port_delete.setOnClickListener(this);
 
         View rootView = findViewById(R.id.include_content);
-        content = (ScrollTextView) rootView.findViewById(R.id.content);
+        content = (TextView) rootView.findViewById(R.id.content);
         loadingView = (TogicLoadingView) rootView.findViewById(R.id.loading_view);
         loadingView.setVisibility(View.GONE);
     }
@@ -122,6 +122,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onDestroy();
         myController.destroy();
         stopService(new Intent(MainActivity.this, UpnpService.class));
+        MyApplication.itemList.clear();
     }
 
     private static class MainHandler extends Handler

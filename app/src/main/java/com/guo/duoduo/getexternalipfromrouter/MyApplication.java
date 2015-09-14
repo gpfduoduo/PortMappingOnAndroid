@@ -1,13 +1,17 @@
 package com.guo.duoduo.getexternalipfromrouter;
 
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
+
+import org.cybergarage.upnp.Device;
+
 import android.app.Application;
 import android.os.Handler;
 import android.os.Message;
 
-import org.cybergarage.upnp.Device;
-
-import java.util.concurrent.ConcurrentHashMap;
+import com.guo.duoduo.getexternalipfromrouter.entity.MappingEntity;
 
 
 /**
@@ -19,6 +23,8 @@ public class MyApplication extends Application
     private ConcurrentHashMap<String, Handler> mHandlerMap = new ConcurrentHashMap<>();
 
     public static Device curDevice = null;
+
+    public static List<MappingEntity> itemList = new ArrayList<MappingEntity>();
 
     @Override
     public void onCreate()

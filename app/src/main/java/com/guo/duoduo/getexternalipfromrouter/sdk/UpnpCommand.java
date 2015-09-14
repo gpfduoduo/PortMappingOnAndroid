@@ -171,7 +171,7 @@ public class UpnpCommand
      * @return
      */
     public static boolean DeletePortMapping(Device dev, String external_port,
-            String internal_port, String protocol)
+            String remote_host, String protocol)
     {
         boolean success = false;
 
@@ -188,7 +188,7 @@ public class UpnpCommand
                     ArgumentList argumentList = delPortMappingAction.getArgumentList();
                     argumentList.getArgument("NewExternalPort").setValue(external_port);
                     argumentList.getArgument("NewProtocol").setValue(protocol);
-                    argumentList.getArgument("NewInternalPort").setValue(internal_port);
+                    argumentList.getArgument("NewRemoteHost").setValue(remote_host);
                     if (delPortMappingAction.postControlAction())
                     {
                         success = true;

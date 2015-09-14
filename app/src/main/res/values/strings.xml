@@ -17,8 +17,11 @@
 
     <string name="clear">取消</string>
     <string name="add">添加</string>
+    <string name="del">删除</string>
     <string name="add_port_fail">添加端口映射失败</string>
     <string name="add_port_success">添加端口映射成功</string>
+    <string name="del_success">删除成功</string>
+    <string name="del_fail">删除失败</string>
 
     <string name="unknown_error">发生未知错误</string>
 </resources>
