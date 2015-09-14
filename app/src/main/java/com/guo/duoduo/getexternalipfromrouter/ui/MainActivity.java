@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button start_find;
     private LinearLayout port_layout;
 
-    private SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
+    private SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss.SSS");
     private StringBuffer strContent = new StringBuffer();
 
     @Override

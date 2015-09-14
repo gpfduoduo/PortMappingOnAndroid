@@ -166,7 +166,7 @@ public class UpnpCommand
      * 
      * @param dev
      * @param external_port
-     * @param internal_port
+     * @param remote_host
      * @param protocol
      * @return
      */
