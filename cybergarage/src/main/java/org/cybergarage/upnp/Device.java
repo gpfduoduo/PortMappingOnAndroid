@@ -57,6 +57,8 @@
 package org.cybergarage.upnp;
 
 
+import android.util.Log;
+
 import java.io.File;
 import java.io.InputStream;
 import java.net.InetAddress;
@@ -424,6 +426,8 @@ public class Device implements org.cybergarage.http.HTTPRequestListener, SearchL
      */
     public String getAbsoluteURL(String urlString)
     {
+        Debug.message("getAbsoluteURL param = " + urlString);
+
         try
         {
             URL url = new URL(urlString);
@@ -443,6 +447,7 @@ public class Device implements org.cybergarage.http.HTTPRequestListener, SearchL
             String locationHost = HTTP.getHost(location);
             int locationPort = HTTP.getPort(location);
             urlBaseStr = HTTP.getRequestHostURL(locationHost, locationPort);
+            Debug.message("urlBaseStr = " + urlBaseStr);
         }
 
         // Bug in toRelativeURL method. Adds unnecessary / to beginning of url.

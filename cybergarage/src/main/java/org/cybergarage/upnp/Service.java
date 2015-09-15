@@ -437,7 +437,8 @@ public class Service
 
         try
         {
-            Debug.message("root Device location = " + rootDev.getLocation() + "; url base = " + rootDev.getURLBase());
+            Debug.message("root Device location = " + rootDev.getLocation() +
+                    "; url base = " + rootDev.getURLBase());
 
             URL scpdUrl = new URL(rootDev.getAbsoluteURL(scpdURLStr));
             scpdNode = getSCPDNode(scpdUrl);
